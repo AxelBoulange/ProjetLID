@@ -7,14 +7,22 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(type: 'string')]
+    private string $password;
+
+    #[ORM\Column(type: 'string')]
+    private string $username;
 
     #[ORM\ManyToOne(inversedBy: 'users')]
     #[ORM\JoinColumn(nullable: false)]
@@ -33,7 +41,7 @@ class User
     private ?\DateTimeInterface $dte_created = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $bigraphy = null;
+    private ?string $biography = null;
 
     /**
      * @var Collection<int, Message>
@@ -118,14 +126,14 @@ class User
         return $this;
     }
 
-    public function getBigraphy(): ?string
+    public function getBiography(): ?string
     {
-        return $this->bigraphy;
+        return $this->biography;
     }
 
-    public function setBigraphy(string $bigraphy): static
+    public function setBiography(string $biography): static
     {
-        $this->bigraphy = $bigraphy;
+        $this->biography = $biography;
 
         return $this;
     }
@@ -188,5 +196,43 @@ class User
         }
 
         return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function getRoles(): array
+    {
+        return [$this->type];
+    }
+
+    public function eraseCredentials(): void
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->username;
+    }
+
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
     }
 }
