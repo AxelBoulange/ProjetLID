@@ -213,7 +213,7 @@ hr.divider {
         display: block;
     }
     .card-box-image{
-        margin : 0px auto 20px auto !important;
+        margin : 0 auto 20px auto !important;
     }
 }
 .card-box-image{
@@ -323,7 +323,7 @@ hr.divider {
     content: "";
     position: absolute;
     height: 100%;
-    width: 0%;
+    width: 0;
     top: 0;
     left: -40px;
     transform: skewX(45deg);
@@ -417,29 +417,10 @@ hr.divider {
     border-color: blueviolet;
 }
 
-.form-container .form-submit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    font-family: inherit;
-    color: mediumvioletred;
-    font-weight: 600;
-    width: 40%;
-    background: transparent;
-    border: 1px solid mediumvioletred;
-    padding: 12px 16px;
-    font-size: inherit;
-    gap: 8px;
-    margin-top: 8px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
 .form-container .form-submit-btn:hover {
-    background-color: blueviolet;
-    border-color: blueviolet;
-    color: black;
+    background-color: mediumvioletred;
+    border-color: mediumvioletred;
+    color: blueviolet;
 }
 
 .main {
@@ -523,23 +504,27 @@ label {
     margin: 5% 0 5%;
 }
 /*Button*/
-.form .form-submit-btn {
+.form-submit-btn {
     width: 80%;
     height: 40px;
     color: mediumvioletred;
     background: transparent;
     font-size: 1rem;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     border: 1px solid mediumvioletred;
     border-radius: 4px;
     cursor: pointer;
     transition: .2s ease-in;
 }
 
-.form .form-submit-btn:hover {
-    background-color: blueviolet;
-    color: mediumvioletred;
-    border-color: blueviolet;
+.form-submit-btn:hover {
+    background-color: mediumvioletred;
+    color: blueviolet;
+    border-color: mediumvioletred;
 }
 .form {
     /*background-color: #15172b;*/
@@ -554,7 +539,7 @@ label {
 }
 
 .title {
-    color: mediumvioletred;
+    color: #00aa00;
     font-family: sans-serif;
     font-size: 30px;
     font-weight: 600;
@@ -585,16 +570,20 @@ label {
 }
 
 .input {
-    background-color: darkgreen;
+    background-color: transparent;
+    border: 1px solid mediumvioletred;
+    color: blueviolet;
     border-radius: 12px;
-    border: 0;
     box-sizing: border-box;
-    color: #00cc00;
     font-size: 18px;
     height: 100%;
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
+}
+
+.input::placeholder {
+    color: blueviolet;
 }
 
 .cut {
@@ -631,8 +620,12 @@ label {
 }
 
 .input:focus {
-    background-color: blueviolet;
-    color: mediumvioletred;
+    color: blueviolet;
+    border: 1px solid mediumvioletred;
+}
+
+.input:focus::placeholder{
+    color: transparent;
 }
 
 .input:focus ~ .iLabel {
@@ -648,26 +641,8 @@ label {
     color: blueviolet;
 }
 
-.submit {
-    width: 80%;
-    height: 40px;
-    color: mediumvioletred;
-    background: blueviolet;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    margin: 0 auto;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: .2s ease-in;
-}
-
-.submit:active {
-    background-color: mediumvioletred;
-}
-
 .terms{
-    font-size: 10px;
-    color : mediumvioletred;
+    font-size: 12px;
+    color : #00cc00;
     justify-content: left;
 }
