@@ -16,7 +16,7 @@ class Picture
 
     #[ORM\ManyToOne(inversedBy: 'pictures')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?ad $ad = null;
+    private ?Ad $ad = null;
 
     #[ORM\Column(type: Types::BLOB)]
     private $picture;
@@ -26,12 +26,12 @@ class Picture
         return $this->id;
     }
 
-    public function getAd(): ?ad
+    public function getAd(): ?Ad
     {
         return $this->ad;
     }
 
-    public function setAd(?ad $ad): static
+    public function setAd(?Ad $ad): static
     {
         $this->ad = $ad;
 

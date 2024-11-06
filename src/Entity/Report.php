@@ -20,7 +20,7 @@ class Report
 
     #[ORM\ManyToOne(inversedBy: 'reports')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?ad $ad = null;
+    private ?Ad $ad = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dte_sended = null;
@@ -48,12 +48,12 @@ class Report
         return $this;
     }
 
-    public function getAd(): ?ad
+    public function getAd(): ?Ad
     {
         return $this->ad;
     }
 
-    public function setAd(?ad $ad): static
+    public function setAd(?Ad $ad): static
     {
         $this->ad = $ad;
 

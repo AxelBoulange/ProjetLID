@@ -441,3 +441,233 @@ hr.divider {
     border-color: blueviolet;
     color: black;
 }
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #240046;
+    max-height: 420px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 7px 7px 10px 3px #24004628;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 24px;
+}
+
+/*checkbox to switch from sign up to login*/
+#chk {
+    display: none;
+}
+
+/*Login*/
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.login label {
+    margin: 25% 0 5%;
+}
+
+label {
+    color: #fff;
+    font-size: 2rem;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    background: #e0dede;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+/*Register*/
+.register {
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(5%);
+    transition: .8s ease-in-out;
+}
+
+.register label {
+    color: #573b8a;
+    transform: scale(.6);
+}
+
+#chk:checked ~ .register {
+    transform: translateY(-60%);
+}
+
+#chk:checked ~ .register label {
+    transform: scale(1);
+    margin: 10% 0 5%;
+}
+
+#chk:checked ~ .login label {
+    transform: scale(.6);
+    margin: 5% 0 5%;
+}
+/*Button*/
+.form .form-submit-btn {
+    width: 80%;
+    height: 40px;
+    color: mediumvioletred;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid mediumvioletred;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.form .form-submit-btn:hover {
+    background-color: blueviolet;
+    color: mediumvioletred;
+    border-color: blueviolet;
+}
+.form {
+    /*background-color: #15172b;*/
+    /*border-radius: 20px;*/
+    /*box-sizing: border-box;*/
+    /*height: 500px;*/
+    /*padding: 20px;*/
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+
+.title {
+    color: mediumvioletred;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.input-container {
+    display: block;
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.ic1 {
+    margin-top: 20px;
+}
+
+.ic2 {
+    margin-top: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    align-items: center;
+}
+
+.input {
+    background-color: darkgreen;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #00cc00;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.cut {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+}
+
+.cut-short {
+    width: 50px;
+}
+.iLabel {
+    color: transparent;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+    font-size: 14px;
+}
+
+.input:focus ~ .cut {
+    transform: translateY(8px);
+    background: mediumvioletred;
+}
+
+.input:focus {
+    background-color: blueviolet;
+    color: mediumvioletred;
+}
+
+.input:focus ~ .iLabel {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+    color: blueviolet;
+}
+
+.input:not(:focus) ~ .iLabel {
+    color: transparent;
+}
+
+.input:focus ~ .iLabel {
+    color: blueviolet;
+}
+
+.submit {
+    width: 80%;
+    height: 40px;
+    color: mediumvioletred;
+    background: blueviolet;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    margin: 0 auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.submit:active {
+    background-color: mediumvioletred;
+}
+
+.terms{
+    font-size: 10px;
+    color : mediumvioletred;
+    justify-content: left;
+}

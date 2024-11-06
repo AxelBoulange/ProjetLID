@@ -18,7 +18,7 @@ class Ad
 
     #[ORM\ManyToOne(inversedBy: 'ads')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?category $category = null;
+    private ?Category $Category = null;
 
     #[ORM\Column(length: 50)]
     private ?string $title = null;
@@ -56,14 +56,14 @@ class Ad
         return $this->id;
     }
 
-    public function getCategory(): ?category
+    public function getCategory(): ?Category
     {
-        return $this->category;
+        return $this->Category;
     }
 
-    public function setCategory(?category $category): static
+    public function setCategory(?Category $Category): static
     {
-        $this->category = $category;
+        $this->Category = $Category;
 
         return $this;
     }
