@@ -22,7 +22,8 @@ class RegistrationController extends AbstractController
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted()) {
+            dd("ghj");
             /** @var string $plainPassword */
             $plainPassword = $form->get('plainPassword')->getData();
             $username = $form->get('username')->getData();
@@ -34,10 +35,9 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // do anything else you need here, like send an email
-
             return $this->redirectToRoute('home');
         }
+
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,

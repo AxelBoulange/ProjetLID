@@ -3,38 +3,36 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-{#    <h1>Register</h1>#}
 
-{#    {{ form_errors(registrationForm) }}#}
 
-{#    {{ form_start(registrationForm) }}#}
-{#        {{ form_row(registrationForm.username) }}#}
-{#        {{ form_row(registrationForm.plainPassword, {#}
-{#            label: 'Password'#}
-{#        }) }}#}
-{#        {{ form_row(registrationForm.agreeTerms) }}#}
+{#    {% if error %}   todo error     #}
+{#        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
 
-{#        <button type="submit" class="btn">Register</button>#}
-{#    {{ form_end(registrationForm) }}#}
-    <form class="form">
-{#      todo CSRF #}
+{#action="{{ path('app_register') }}"#}
+    <form  class="form" action="{{ path('app_register') }}" method="post">
+        {#      todo CSRF #}
         <div class="title">Créons votre compte!</div>
 
         <div class="input-container ic1">
-            <input placeholder="Username" type="text" class="input" id="username" required>
+            <input placeholder="Username" type="text" class="input" id="username" name="_username" required>
             <div class="cut"></div>
             <label class="iLabel" for="username">Username</label>
         </div>
 
         <div class="input-container ic2">
-            <input placeholder="Password" type="text" class="input" id="password" required>
+            <input placeholder="Password" type="text" class="input" id="password" name="_password" required>
             <div class="cut"></div>
             <label class="iLabel" for="password">Password</label>
         </div>
+
         <div class="checkbox-container">
                 <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
                 <label class="terms" for="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
         </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
         <button class="form-submit-btn" type="submit">Valider</button>
     </form>
 {% endblock %}
