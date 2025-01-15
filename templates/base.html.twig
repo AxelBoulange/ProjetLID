@@ -6,7 +6,7 @@
     <meta name="description" content="{% block description %}{% endblock %}" />
     <meta name="author" content="Axel Boulangé" />
     <title>{% block title %}{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('img/dollar.png') }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/compass.png') }}"/>
         <link href="{{ asset('styles/s.css') }}" rel="stylesheet" />
 </head>
 <body id="page-top">
@@ -18,7 +18,7 @@
                     alt="Logo Picture"
             /></a>
         <div class="nav-links">
-            <ul class="text-purple">
+            <ul class="text-normal">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Services</a></li>
@@ -34,10 +34,10 @@
         </div>
 </nav>
 
-        {% block body %}{% endblock %}
+{% block body %}{% endblock %}
 
 <!-- Footer-->
-<footer class="bg-light py-5">
+<footer class="bg-light py-5" style="{% block footerStyles %}{% endblock %}">
     <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
 </footer>
 <!-- Core theme JS-->

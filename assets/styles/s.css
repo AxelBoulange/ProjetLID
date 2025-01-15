@@ -1,26 +1,18 @@
 :root {
-    --navbar-background: #000;
-    --shadow: hsla(237, 14%, 73%, 0.452);
-    --Logo-color: hsl(226, 46%, 51%);
-    --color: #8600b3;
-    --color-hover-links: #bf00ff;
-    /* COLORS */
-    --primary-color: hsl(246, 76%, 67%);
-    --white-color: hsl(0, 0%, 100%);
-    --blue-color: hsl(254, 100%, 31%);
-
-    /* BACKGROUND COLORS */
-    --background-color: hsl(0, 18%, 97%);
-    --background-filter:hsla(0, 0%, 7%, 0.361);
-
-    /* FONT-WEIGHT */
-    --medium-font-weight: 600;
-    --small-font-weigt: 400;
+    --shadow: #00000033;
+    --ObjectsColor1:#2D5382;
+    --ObjectsColor2: #2E7A99;
+    --ObjectsColor3: #DBC078;
+    --BackgroundColor1: #FFF;
+}
+html{
+    height: 100%;
 }
 body{
     margin: 0;
-    background-color: #000000;
-    font-family: "Copperplate Gothic Bold";
+    min-height: 100%;
+    background-color: var(--BackgroundColor1);
+    font-family: "Copperplate Gothic Bold", serif;
 }
 a{
     text-decoration: none;
@@ -30,10 +22,10 @@ h1{
 }
 /* NAVBAR */
 .navbar{
-    background-color: #000000;
+    background-color: var(--BackgroundColor1);
     position: sticky;
     width: 100%;
-    height: 100px;
+    height: fit-content;
     z-index: 40;
     top: 0;
     display: flex;
@@ -66,12 +58,12 @@ h1{
     font-size: 24px;
 }
 .nav-links ul li a{
-    color: #8600b3;
+    color: var(--ObjectsColor2);
 }
 .nav-links ul li a:hover{
     cursor: pointer;
     font-weight: bold;
-    color: mediumvioletred;
+    color: var(--ObjectsColor3);
 }
 .menu-hamburger{
     position: absolute;
@@ -87,7 +79,7 @@ h1{
     width: 100%;
     height: 6px;
     border-radius: 15px;
-    background-color: #8600b3;
+    background-color: var(--BackgroundColor1);
 }
 @media screen and (max-width: 860px){
     .menu-hamburger{
@@ -137,67 +129,33 @@ h1{
 
 /* header */
 header.masthead {
-    padding: 4%;
+    padding: 35px;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
 }
 header.masthead h1, header.masthead .h1 {
     font-size: 2.25rem;
-}
-@media (min-width: 992px) {
-    header.masthead {
-        padding-bottom: 0;
-    }
-    header.masthead p {
-        font-size: 1.15rem;
-    }
-    header.masthead h1, header.masthead .h1 {
-        font-size: 3rem;
-    }
-}
-@media (min-width: 1200px) {
-    header.masthead h1, header.masthead .h1 {
-        font-size: 3.5rem;
-    }
+    margin: 20px auto;
+    text-align: center;
 }
 
-.text-purple {
-    color: #8600b3;
+.text-normal {
+    color: var(--ObjectsColor1);
 }
-.text-purple:hover, .text-purple:focus {
-    color: mediumvioletred;
-}
-.text-bright-purple {
-    color: purple;
-}
-.text-bright-purple:hover, .text-purple:focus {
-    color: mediumvioletred;
-}
-.text-green {
-    color: #00cc00 !important;
-}
-.text-green:hover, .text-green:focus {
-    color: #00ff00 !important;
-}
-.text-dark-green {
-    color: #2bbc46 !important;
-}
-.text-dark-green:hover, .text-green:focus {
-    color: #2af750 !important;
+.text-bright {
+    color: var(--ObjectsColor2);
 }
 hr {
-    margin: 1rem 0;
     color: inherit;
-    border: 0;
-    border-top: 1px solid;
     opacity: 0.25;
+    border-width: 0;
 }
 hr.divider {
     height: 0.2rem;
     max-width: 3.25rem;
-    margin: 1.5rem auto;
-    background-color: #00cc00;
+    margin: 100px auto;
+    background-color: var(--ObjectsColor3);
     opacity: 1;
 }
 /* FLIP-CARD */
@@ -213,21 +171,21 @@ hr.divider {
         display: block;
     }
     .card-box-image{
-        margin : 0 auto 20px auto !important;
+        margin : 0 auto 20px auto;
     }
 }
 .card-box-image{
     z-index: 5;
     width: 225px;
     height: 275px;
-    margin: 15px;
+    margin: 15px 2%;
     perspective: 1000px;
+    border: var(--ObjectsColor3) solid thin;
+    border-radius: 15px;
 }
 .card-inner{
     width: 100%;
     height: 100%;
-    border: 2px solid #8600b3;
-    border-radius: 15px;
     background-color: transparent;
     transition: transform 0.6s;
     transform-style: preserve-3d;
@@ -262,11 +220,11 @@ hr.divider {
 }
 .card-back-container h1{
     font-size: 40px;
-    margin: 10px;
+    margin: 5px;
 }
 .card-back-container p{
     font-size: 20px;
-    margin: 15px;
+    margin: 8px;
 }
 .card-image-logo{
     width: 80%;
@@ -281,10 +239,13 @@ hr.divider {
         height: 350px;
     }
     .card-back-container h1{
-        font-size: 50px;
+        font-size: 30px;
     }
     .card-back-container p{
-        font-size: 25px;
+        font-size: 15px;
+    }
+    .card-back-container div{
+        width: 240px
     }
 }
 @media (min-width: 1100px) {
@@ -292,18 +253,19 @@ hr.divider {
         width: 400px;
         height: 400px;
     }.card-back-container h1{
-         font-size: 60px;
+         font-size: 40px;
      }
     .card-back-container p{
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
 .btn {
-    color: purple;
+    color: var(--ObjectsColor1);
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid purple;
+    border: var(--ObjectsColor3) solid 1px;
+    border-radius: 5px;
     padding: 10px 20px;
     font-size: 12px;
     cursor: pointer;
@@ -316,7 +278,9 @@ hr.divider {
 }
 
 .btn:hover {
-    color: white;
+    color: var(--ObjectsColor3);
+    border: transparent solid 1px;
+
 }
 
 .btn::before {
@@ -327,7 +291,7 @@ hr.divider {
     top: 0;
     left: -40px;
     transform: skewX(45deg);
-    background-color: purple;
+    background-color: var(--ObjectsColor2);
     z-index: -1;
     transition: all 1s;
 }
@@ -360,6 +324,7 @@ hr.divider {
 
 .form-container .form {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -374,60 +339,62 @@ hr.divider {
 .form-container .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: mediumvioletred;
+    color: var(--ObjectsColor1);
     font-weight: 600;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .form-container .form-group input {
     padding: 12px 16px;
     border-radius: 8px;
-    color: mediumvioletred;
+    color: var(--ObjectsColor1);
     font-family: inherit;
+    font-size: 16px;
     background-color: transparent;
-    border: 1px solid mediumvioletred;
+    border: 2px solid var(--ObjectsColor1);
 }
 
 .form-container .form-group textarea {
     padding: 12px 16px;
     border-radius: 8px;
     resize: none;
-    color: mediumvioletred;
+    color: var(--ObjectsColor1);
     height: 96px;
-    border: 1px solid mediumvioletred;
+    border: 1px solid var(--ObjectsColor1);
     background-color: transparent;
     font-family: inherit;
+    font-size: 16px;
 }
 
 .form-container .form-group input::placeholder {
     opacity: 0.5;
-    color: blueviolet;
-    border-color: blueviolet;
+    color: var(--ObjectsColor2);
+    border-color: var(--ObjectsColor2);
 }
 
 .form-container .form-group input:focus {
     outline: none;
-    color: blueviolet;
-    border-color: blueviolet;
+    color: var(--ObjectsColor3);
+    border-color: var(--ObjectsColor2);
 }
 
 .form-container .form-group textarea:focus {
     outline: none;
-    color: blueviolet;
-    border-color: blueviolet;
+    color: var(--ObjectsColor3);
+    border-color: var(--ObjectsColor2);
 }
 
 .form-container .form-submit-btn:hover {
-    background-color: mediumvioletred;
-    border-color: mediumvioletred;
-    color: blueviolet;
+    background-color: var(--ObjectsColor2);
+    border-color: var(--BackgroundColor1);
+    color: var(--ObjectsColor3);
 }
 
 .main {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #240046;
+    background-color: var(--BackgroundColor1);
     max-height: 420px;
     overflow: hidden;
     border-radius: 12px;
@@ -458,7 +425,7 @@ hr.divider {
 }
 
 label {
-    color: #fff;
+    color: var(--ObjectsColor1);
     font-size: 2rem;
     justify-content: center;
     display: flex;
@@ -470,7 +437,7 @@ label {
 .input {
     width: 100%;
     height: 40px;
-    background: #e0dede;
+    background: var(--BackgroundColor1);
     padding: 10px;
     border: none;
     outline: none;
@@ -479,14 +446,14 @@ label {
 
 /*Register*/
 .register {
-    background: #eee;
+    background: var(--BackgroundColor1);
     border-radius: 60% / 10%;
     transform: translateY(5%);
     transition: .8s ease-in-out;
 }
 
 .register label {
-    color: #573b8a;
+    color: var(--ObjectsColor1);
     transform: scale(.6);
 }
 
@@ -507,7 +474,7 @@ label {
 .form-submit-btn {
     width: 80%;
     height: 40px;
-    color: mediumvioletred;
+    color: var(--ObjectsColor2);
     background: transparent;
     font-size: 1rem;
     font-weight: bold;
@@ -515,16 +482,16 @@ label {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid mediumvioletred;
+    border: 1px solid var(--ObjectsColor2);
     border-radius: 4px;
     cursor: pointer;
     transition: .2s ease-in;
 }
 
 .form-submit-btn:hover {
-    background-color: mediumvioletred;
-    color: blueviolet;
-    border-color: mediumvioletred;
+    background-color: var(--ObjectsColor2);
+    color: var(--ObjectsColor3);
+    border-color: var(--ObjectsColor3);
 }
 .form {
     /*background-color: #15172b;*/
@@ -539,7 +506,7 @@ label {
 }
 
 .title {
-    color: #00aa00;
+    color: var(--ObjectsColor2);
     font-family: sans-serif;
     font-size: 30px;
     font-weight: 600;
@@ -569,21 +536,8 @@ label {
     align-items: center;
 }
 
-.input {
-    background-color: transparent;
-    border: 1px solid mediumvioletred;
-    color: blueviolet;
-    border-radius: 12px;
-    box-sizing: border-box;
-    font-size: 18px;
-    height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
-    width: 100%;
-}
-
 .input::placeholder {
-    color: blueviolet;
+    color: var(--ObjectsColor2);
 }
 
 .cut {
@@ -616,12 +570,12 @@ label {
 
 .input:focus ~ .cut {
     transform: translateY(8px);
-    background: mediumvioletred;
+    background: var(--ObjectsColor2);
 }
 
 .input:focus {
-    color: blueviolet;
-    border: 1px solid mediumvioletred;
+    color: var(--ObjectsColor1);
+    border: 1px solid var(--ObjectsColor2);
 }
 
 .input:focus::placeholder{
@@ -630,7 +584,7 @@ label {
 
 .input:focus ~ .iLabel {
     transform: translateY(-30px) translateX(10px) scale(0.75);
-    color: blueviolet;
+    color: var(--ObjectsColor1);
 }
 
 .input:not(:focus) ~ .iLabel {
@@ -638,11 +592,11 @@ label {
 }
 
 .input:focus ~ .iLabel {
-    color: blueviolet;
+    color: var(--ObjectsColor3);
 }
 
 .terms{
     font-size: 12px;
-    color : #00cc00;
+    color: var(--ObjectsColor3);
     justify-content: left;
 }
