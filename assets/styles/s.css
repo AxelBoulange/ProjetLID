@@ -353,7 +353,7 @@ hr.divider {
     font-family: inherit;
     font-size: 16px;
     background-color: transparent;
-    border: 2px solid var(--ObjectsColor1);
+    border: 1px solid var(--ObjectsColor1);
 }
 
 .form-container .form-group textarea {
