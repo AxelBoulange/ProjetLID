@@ -1,27 +1,32 @@
 :root {
     --shadow: #00000033;
-    --ObjectsColor1:#2D5382;
+    --ObjectsColor1: #2D5382;
     --ObjectsColor2: #2E7A99;
     --ObjectsColor3: #DBC078;
     --BackgroundColor1: #FFF;
 }
-html{
+
+html {
     height: 100%;
 }
-body{
+
+body {
     margin: 0;
     min-height: 100%;
     background-color: var(--BackgroundColor1);
     font-family: "Copperplate Gothic Bold", serif;
 }
-a{
+
+a {
     text-decoration: none;
 }
-h1{
+
+h1 {
     margin-block: 0;
 }
+
 /* NAVBAR */
-.navbar{
+.navbar {
     background-color: var(--BackgroundColor1);
     position: sticky;
     width: 100%;
@@ -33,61 +38,71 @@ h1{
     align-items: center;
     box-shadow: 0 3px 10px 0 var(--shadow);
 }
-.logo{
+
+.logo {
     max-width: 300px;
     margin-left: 20px;
 }
-.logo img{
+
+.logo img {
     width: 100%;
     height: auto;
 }
-.nav-links{
+
+.nav-links {
     height: 100%;
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-right: 2%;
 }
-.nav-links ul{
+
+.nav-links ul {
     display: flex;
     padding-inline-start: 0;
 }
-.nav-links ul li{
+
+.nav-links ul li {
     list-style: none;
-    padding: 0 15px;
+    padding: 0 30px;
     font-weight: 600;
     font-size: 24px;
 }
-.nav-links ul li a{
+
+.nav-links ul li a {
     color: var(--ObjectsColor2);
 }
-.nav-links ul li a:hover{
+
+.nav-links ul li a:hover {
     cursor: pointer;
     font-weight: bold;
     color: var(--ObjectsColor3);
 }
-.menu-hamburger{
+
+.menu-hamburger {
     position: absolute;
     width: 40px;
     height: 32px;
     margin: auto 4rem;
-    right:0;
+    right: 0;
     display: none;
     flex-direction: column;
     justify-content: space-between;
 }
-.bar-menu{
+
+.bar-menu {
     width: 100%;
     height: 6px;
     border-radius: 15px;
     background-color: var(--ObjectsColor2);
 }
-@media screen and (max-width: 860px){
-    .menu-hamburger{
+
+@media screen and (max-width: 860px) {
+    .menu-hamburger {
         display: flex;
-        z-index:40;
+        z-index: 40;
     }
-    .nav-links{
+
+    .nav-links {
         position: absolute;
         width: 100%;
         height: 100vh;
@@ -99,30 +114,36 @@ h1{
         backdrop-filter: blur(50px);
         z-index: 20 !important;
     }
-    .nav-links.active{
+
+    .nav-links.active {
         display: flex;
     }
+
     .nav-links ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .nav-links ul li{
+
+    .nav-links ul li {
         margin: 25px 0;
         font-size: 3em;
     }
-    .logo{
+
+    .logo {
         width: 300px;
     }
 }
-@media screen and (max-width: 560px){
-    .logo{
+
+@media screen and (max-width: 560px) {
+    .logo {
         width: 250px;
     }
 }
-@media screen and (max-width: 420px){
-    .logo{
+
+@media screen and (max-width: 420px) {
+    .logo {
         z-index: 5;
         width: 170px;
     }
@@ -136,6 +157,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
 }
+
 header.masthead h1, header.masthead .h1 {
     font-size: 2.25rem;
     margin: 20px auto;
@@ -145,14 +167,17 @@ header.masthead h1, header.masthead .h1 {
 .text-normal {
     color: var(--ObjectsColor1);
 }
+
 .text-bright {
     color: var(--ObjectsColor2);
 }
+
 hr {
     color: inherit;
     opacity: 0.25;
     border-width: 0;
 }
+
 hr.divider {
     height: 0.2rem;
     max-width: 3.25rem;
@@ -160,8 +185,9 @@ hr.divider {
     background-color: var(--ObjectsColor3);
     opacity: 1;
 }
+
 /* FLIP-CARD */
-.container{
+.container {
     position: relative;
     width: 100%;
     display: flex;
@@ -169,15 +195,18 @@ hr.divider {
     align-items: center;
     margin-bottom: 50px;
 }
+
 @media (max-width: 550px) {
-    .become-block{
+    .become-block {
         display: block;
     }
-    .card-box-image{
-        margin : 0 auto 20px auto;
+
+    .card-box-image {
+        margin: 0 auto 20px auto;
     }
 }
-.card-box-image{
+
+.card-box-image {
     z-index: 5;
     width: 225px;
     height: 275px;
@@ -186,34 +215,40 @@ hr.divider {
     border: var(--ObjectsColor3) solid thin;
     border-radius: 15px;
 }
-.card-inner{
+
+.card-inner {
     width: 100%;
     height: 100%;
     background-color: transparent;
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
-.card-box-image:hover .card-inner{
+
+.card-box-image:hover .card-inner {
     transform: rotateY(180deg);
 }
+
 .card-front,
-.card-back{
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
     backface-visibility: hidden;
 }
-.card-front{
+
+.card-front {
     display: flex;
     justify-content: center;
     align-items: center;
     transform: rotateY(0deg);
 }
-.card-back{
+
+.card-back {
     transform: rotateY(180deg);
 }
-.card-back-container{
+
+.card-back-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -221,44 +256,55 @@ hr.divider {
     justify-content: space-evenly;
     align-items: center;
 }
-.card-back-container h1{
+
+.card-back-container h1 {
     font-size: 40px;
     margin: 5px;
 }
-.card-back-container p{
+
+.card-back-container p {
     font-size: 20px;
     margin: 8px;
 }
-.card-image-logo{
+
+.card-image-logo {
     width: 80%;
     margin-bottom: 10px;
     border-radius: 12.5px;
     object-fit: contain;
     filter: drop-shadow(10px 15px 10px var(--background-filter));
 }
+
 @media (min-width: 800px) {
-    .card-box-image{
+    .card-box-image {
         width: 300px;
         height: 350px;
     }
-    .card-back-container h1{
+
+    .card-back-container h1 {
         font-size: 30px;
     }
-    .card-back-container p{
+
+    .card-back-container p {
         font-size: 15px;
     }
-    .card-back-container div{
+
+    .card-back-container div {
         width: 240px
     }
 }
+
 @media (min-width: 1100px) {
-    .card-box-image{
+    .card-box-image {
         width: 400px;
         height: 400px;
-    }.card-back-container h1{
-         font-size: 40px;
-     }
-    .card-back-container p{
+    }
+
+    .card-back-container h1 {
+        font-size: 40px;
+    }
+
+    .card-back-container p {
         font-size: 20px;
     }
 }
@@ -302,6 +348,7 @@ hr.divider {
 .btn:hover::before {
     width: 160%;
 }
+
 .form-container {
     width: 400px;
     padding: 32px 24px;
@@ -314,6 +361,7 @@ hr.divider {
     border-radius: 16px;
     align-items: center;
 }
+
 @media (max-width: 460px) {
     .form-container {
         width: 260px;
@@ -441,7 +489,7 @@ label {
     height: 40px;
     background: var(--BackgroundColor1);
     padding: 10px;
-    border: none;
+    border: 1px var(--ObjectsColor2) solid;
     outline: none;
     border-radius: 4px;
 }
@@ -472,6 +520,7 @@ label {
     transform: scale(.6);
     margin: 5% 0 5%;
 }
+
 /*Button*/
 .form-submit-btn {
     width: 80%;
@@ -483,7 +532,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 15px auto;
     border: 1px solid var(--ObjectsColor2);
     border-radius: 4px;
     cursor: pointer;
@@ -495,6 +544,7 @@ label {
     color: var(--ObjectsColor3);
     border-color: var(--ObjectsColor3);
 }
+
 .form {
     /*background-color: #15172b;*/
     /*border-radius: 20px;*/
@@ -520,14 +570,7 @@ label {
     height: 50px;
     position: relative;
     width: 100%;
-}
-
-.ic1 {
-    margin-top: 20px;
-}
-
-.ic2 {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .checkbox-container {
@@ -557,6 +600,7 @@ label {
 .cut-short {
     width: 50px;
 }
+
 .iLabel {
     color: transparent;
     font-family: sans-serif;
@@ -580,7 +624,7 @@ label {
     border: 1px solid var(--ObjectsColor2);
 }
 
-.input:focus::placeholder{
+.input:focus::placeholder {
     color: transparent;
 }
 
@@ -597,8 +641,20 @@ label {
     color: var(--ObjectsColor3);
 }
 
-.terms{
+.terms {
     font-size: 12px;
     color: var(--ObjectsColor3);
     justify-content: left;
+}
+
+footer {
+    background-color: var(--BackgroundColor1);
+    box-shadow: 0 3px 10px 0 var(--shadow);
+}
+
+footer p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
 }

@@ -8,6 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('img/compass.png') }}"/>
         <link href="{{ asset('styles/s.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body id="page-top">
 <!-- NAVBAR -->
@@ -19,11 +20,11 @@
             /></a>
         <div class="nav-links">
             <ul class="text-normal">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="#"><i class="fa fa-home fa-xl"></i></a></li>
+                <li><a href="#"><i class="fa fa-car fa-xl"></i></a></li>
+                <li><a href="#"><i class="fa fa-comments-dollar fa-xl"></i></a></li>
+                <li><a href="#"><i class="fa fa-paper-plane fa-xl"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket fa-xl"></i></a></li>
             </ul>
         </div>
         <!-- MENU HAMBURGER -->
@@ -37,8 +38,8 @@
 {% block body %}{% endblock %}
 
 <!-- Footer-->
-<footer class="bg-light py-5" style="{% block footerStyles %}{% endblock %}">
-    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div></div>
+<footer style="{% block footerStyles %}{% endblock %}">
+    <p class="text-normal">BlaBlaCoin&copy;   2024 - {{ "now"|date("Y") }}</p>
 </footer>
 <!-- Core theme JS-->
 <script src="{{ asset('scripts.js') }}"></script>
